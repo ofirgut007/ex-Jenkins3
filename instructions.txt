@@ -20,3 +20,6 @@ git add README.md
 git commit -m "first commit"
 git remote add origin "https://github.com/$MY_USER/ex-Jenkins3.git"
 git push -u origin master
+Now we will take a break and check https://wiki.jenkins.io/display/JENKINS/GMail
+read -p "please click enter once finished: " var1
+chmod 777 /tmp/
