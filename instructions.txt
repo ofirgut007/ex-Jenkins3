@@ -1,0 +1,22 @@
+cd ~/..
+cd home/
+ls
+MY_USER=ofirgut007
+cd $MY_USER/
+mkdir workspace
+cd workspace
+echo "Now I will put in the workspace an instructions file"
+echo "And start putting all the commands into it"
+touch instructions.txt
+echo "Create a new repository on GitHub. To avoid errors, do not initialize the new repository with README, license, or gitignore files. We will add these files later after a project has been pushed to GitHub "
+read -p "please click enter to proceed: " var1
+clear
+echo "# ex-Jenkins3" >> README.md
+mkdir ex-Jenkins3/
+cd ex-Jenkins3/
+cp ../README.md .
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin "https://github.com/$MY_USER/ex-Jenkins3.git"
+git push -u origin master
