@@ -23,3 +23,11 @@ git push -u origin master
 Now we will take a break and check https://wiki.jenkins.io/display/JENKINS/GMail
 read -p "please click enter once finished: " var1
 chmod 777 /tmp/
+cp --recursive /opt/tomcat/.jenkins/jobs/ .
+touch .gitignore
+git status -u
+echo "/jobs/atmosphere-*/builds" >> .gitignore
+echo "/jobs/atmosphere-*/lastStable" >> .gitignore
+echo "/jobs/atmosphere-*/lastSuccessful" >> .gitignore
+echo "/jobs/atmosphere-*/nextBuildNumber" >> .gitignore
+git status -u

@@ -1,0 +1,17 @@
+w?
+.#*
+*#
+*~
+/build
+/code
+bin
+build
+lib/
+target
+build.log
+.idea
+.DS_Store
+/jobs/atmosphere-*/builds
+/jobs/atmosphere-*/lastStable
+/jobs/atmosphere-*/lastSuccessful
+/jobs/atmosphere-*/nextBuildNumber
