@@ -31,3 +31,7 @@ echo "/jobs/atmosphere-*/lastStable" >> .gitignore
 echo "/jobs/atmosphere-*/lastSuccessful" >> .gitignore
 echo "/jobs/atmosphere-*/nextBuildNumber" >> .gitignore
 git status -u
+git add instructions.txt .gitignore
+git commit -m "Added git ignore"
+git push
+git status -u

@@ -15,3 +15,5 @@ build.log
 /jobs/atmosphere-*/lastStable
 /jobs/atmosphere-*/lastSuccessful
 /jobs/atmosphere-*/nextBuildNumber
+/jobs/helloworld*/builds
+
