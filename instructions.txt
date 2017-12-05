@@ -20,7 +20,7 @@ git add README.md
 git commit -m "first commit"
 git remote add origin "https://github.com/$MY_USER/ex-Jenkins3.git"
 git push -u origin master
-Now we will take a break and check https://wiki.jenkins.io/display/JENKINS/GMail
+echo "Now we will take a break and check https://wiki.jenkins.io/display/JENKINS/GMail"
 read -p "please click enter once finished: " var1
 chmod 777 /tmp/
 cp --recursive /opt/tomcat/.jenkins/jobs/ .
@@ -35,3 +35,38 @@ git add instructions.txt .gitignore
 git commit -m "Added git ignore"
 git push
 git status -u
+git add .
+git commit -m "Added Jobs"
+git push
+echo "NOW FOR PART 2"
+echo "----------------------"
+echo "----------------------"
+echo "----------------------"
+now we will watch https://www.youtube.com/watch?v=OuujUK7K3CI
+read -p "please click enter once finished: " var1
+clear
+echo "We will follow the instructions and"
+read -p "please click enter once finished: " var1
+echo "Now we will  setup a windows slave. make sure they are on the SAME network in VMware or VirtualBox"
+
+echo "Now, set up a windows Node in jenkins. make sure the root directory is C:\Jenkins" 
+echo "INstall on the Node the following apps: Java, Git"
+echo "Create a new repository on $MY_USER GitHub, call it ex3-Jenkins3slave.git. To avoid errors, do not initialize the new repository with README, license, or gitignore files. We will add these files later after a project has been pushed to GitHub "
+mkdir ../ex3-Jenkinsslave
+echo "# Slave File" >> ../ex3-Jenkinsslave/README.md
+cd ../ex3-Jenkinsslave
+git init
+echo "Download slave from Jenkins Node"
+mv ~/../home/$MY_USER/downloads/slave.jar .
+git add .
+git commit -m "Added the slave.jar for windows"
+git remote add origin "https:/github.com/$MY_USER/ex-Jenkins3slave.git"
+git push -u origin master
+echo "Now, go to you Windows VM and open cmd.exe"
+git clone "https:/github.com/$MY_USER/ex-Jenkins3slave.git"
+echo "run slave.jar with the following command, just make sure you have the correct secret"
+java -jar slave.jar -jnlpUrl http://localhost:8080/jenkins/computer/windows2/slave-agent.jnlp -secret *****************  -workDir "c:\jenkins"
+echo "There are 2 possible errors here: 1. you didnt run firefox/edge/chrome as admin"
+echo "2. you need to make sure the jnlp slave runs with all permissions"
+echo "but, usually, 90% of the times, just running this command works fine"
+
