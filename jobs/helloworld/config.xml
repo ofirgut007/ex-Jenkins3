@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description></description>
+  <description>java example</description>
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@3.6.4">
@@ -38,11 +38,20 @@
   <builders>
     <hudson.tasks.Ant plugin="ant@1.7">
       <targets></targets>
-      <antName>(Default)</antName>
+      <antName>AntOfir</antName>
       <buildFile>build.xml</buildFile>
     </hudson.tasks.Ant>
   </builders>
   <publishers>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>QA</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
     <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.23">
       <testResults>Reports*.xml</testResults>
       <keepLongStdio>false</keepLongStdio>
@@ -50,5 +59,11 @@
       <allowEmptyResults>false</allowEmptyResults>
     </hudson.tasks.junit.JUnitResultArchiver>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <hudson.plugins.ws__cleanup.PreBuildCleanup plugin="ws-cleanup@0.34">
+      <deleteDirs>false</deleteDirs>
+      <cleanupParameter></cleanupParameter>
+      <externalDelete></externalDelete>
+    </hudson.plugins.ws__cleanup.PreBuildCleanup>
+  </buildWrappers>
 </project>

@@ -70,3 +70,8 @@ echo "There are 2 possible errors here: 1. you didnt run firefox/edge/chrome as 
 echo "2. you need to make sure the jnlp slave runs with all permissions"
 echo "but, usually, 90% of the times, just running this command works fine"
 
+systemctl stop tomcat
+mv jenkins.war ~/../home/ubuntu1/Downloads/jenkinsOLD.war
+mv ~/../home/ubuntu1/Downloads/jenkins.war .
+systemctl start tomcat
+cd /opt/tomcat/webapps
